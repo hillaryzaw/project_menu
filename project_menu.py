@@ -1,3 +1,4 @@
+# welcome to my awesome code
 print()
 def pizza(x):
   if x == 1:
@@ -36,74 +37,104 @@ def drinks(x):
     return 'pretty in pink'
 
 
-def set(x):
+def combos(x):
   if x == 1:
     return 'Supreme pizza, pasta salad'
   elif x == 2:
     return 'Salty sailor pizza, lasagna'
   else:
     return 'Classic meat pizza, carbonara'
+
+def review(order):
+  print("Here is your complete order ><: ")
+  for i in order:
+    print(f" {i}")
+  print("\nThank you for your purchase! 🐈‍⬛")
+
   
 def welcome():
+  order = []
   print("Welcome to Thiri's kitchen! Please choose a category from below! 🐈‍⬛")
-  print("1. Pizza 🍕")
-  print("2. Pasta 🍝")
-  print("3. Drinks 🥤")
-  print("4. Combos (includes a toy blindbox) 🍕🍝🥤🎁")
-  menu = int(input("Enter the menu number(1-4): "))
-  if menu == 1:
-    print("\n1. supreme pizza\n2. classic meat pizza\n3. vegan pizza\n4. salty sailor pizza\n5. stinky pete pizza\n")
-    x = int(input("Enter your pizza number(1-5): "))
-    while x < 1 or x > 5:
-      print("Invalid choice. Please choose again.")
-      x = int(input("Enter your pizza number(1-5): "))
-    print(f"\nYou have ordered a {pizza(x)}! Thank youu.")
-
-  elif menu == 2:
-    print("\n1. carbonara\n2. shrimp and pesto paste\n3. lasagna\n4. chicken and linguini\n5. pasta salad\n")
-    x = int(input("Enter your pasta number(1-5): "))
-    while x < 1 or x > 5:
-      print("Invalid choice. Please choose again.")
-      x = int(input("Enter your pasta number(1-5): "))
-    print(f"\nYou have ordered {pasta(x)}! Thank youu.")
-
-  elif menu == 3:
-    print("\n1. mango smoothie\n2. blueberry slushie\n3. water\n4. strawberry fresh\n5. pretty in pink\n")
-    x = int(input("Enter your drinks number(1-5): "))
-    while x < 1 or x > 5:
-      print("Invalid choice. Please choose again.")
-      x = int(input("Enter your drinks number(1-5): "))
-    print(f"\nYou have ordered {drinks(x)}! Thank youu.")
-
-  elif menu == 4:
-    print("\n1. Supreme set: supreme pizza, pasta salad, and your choice of drink")
-    print("2. Sailor set: salty sailor pizza, lasagna, and your choice of drink")
-    print("3. Classic set: Classic meat pizza, carbonara, and your choice of drink\n")
-    x = int(input("Enter your set number(1-3): "))
-    while x < 1 or x > 3:
-      print("Invalid choice. Please choose again.")
-      x = int(input("Enter your set number(1-3): "))
-    print("1. mango smoothie\n2. blueberry slushie\n3. water\n4. strawberry fresh\n5. pretty in pink\n")
-    x = int(input("Enter your drinks number(1-5): "))
-    while x < 1 or x > 5:
-      print("Invalid choice. Please choose again.")
-      x = int(input("Enter your drinks number(1-5): "))
-    print(f"\nYou have ordered {set(x)} with {drinks(x)}! You get a blindbox containing one of these toys: kitty, bee, caterpiller, or bear.\n")
-    input("Open the blindbox?\nPress enter..\n\n")
-    import random
-    toy = random.randint(1,4)
-    if toy == 1:
-      print(f"You got the kitty!🐱")
-    elif toy == 2:
-      print(f"You got the bee!🐝")
-    elif toy == 3:
-      print(f"You got the caterpiller!🐛")
-    else:
-      print(f"You got the bear!🐻")
-    print("Thank you for your purchase. 🐈")
-  else:
-    print("invalid choice. Please choose again.")
+  while True:
+    print("1. Pizza 🍕")
+    print("2. Pasta 🍝")
+    print("3. Drinks 🥤")
+    print("4. Combos (includes a toy blindbox) 🍕🍝🥤🎁")
+    print("5. Review Orders📝")
+    print("6. All done!")
     menu = int(input("Enter the menu number(1-4): "))
+    if menu == 1:
+      print("\n1. supreme pizza\n2. classic meat pizza\n3. vegan pizza\n4. salty sailor pizza\n5. stinky pete pizza\n")
+      x = int(input("Enter your pizza number(1-5): "))
+      while x < 1 or x > 5:
+        print("Invalid choice. Please choose again.")
+        x = int(input("Enter your pizza number(1-5): "))
+      order.append(pizza(x))
+      print(f"\nYou have ordered a {pizza(x)}! Thank youu.")
+
+    elif menu == 2:
+      print("\n1. carbonara\n2. shrimp and pesto paste\n3. lasagna\n4. chicken and linguini\n5. pasta salad\n")
+      x = int(input("Enter your pasta number(1-5): "))
+      while x < 1 or x > 5:
+        print("Invalid choice. Please choose again.")
+        x = int(input("Enter your pasta number(1-5): "))
+      order.append(pasta(x))
+      print(f"\nYou have ordered {pasta(x)}! Thank youu.")
+
+    elif menu == 3:
+      print("\n1. mango smoothie\n2. blueberry slushie\n3. water\n4. strawberry fresh\n5. pretty in pink\n")
+      x = int(input("Enter your drinks number(1-5): "))
+      while x < 1 or x > 5:
+        print("Invalid choice. Please choose again.")
+        x = int(input("Enter your drinks number(1-5): "))
+      order.append(drinks(x))
+      print(f"\nYou have ordered {drinks(x)}! Thank youu.")
+
+    elif menu == 4:
+      print("\n1. Supreme set: supreme pizza, pasta salad, and your choice of drink")
+      print("2. Sailor set: salty sailor pizza, lasagna, and your choice of drink")
+      print("3. Classic set: Classic meat pizza, carbonara, and your choice of drink\n")
+      x = int(input("Enter your set number(1-3): "))
+      while x < 1 or x > 3:
+        print("Invalid choice. Please choose again.")
+        x = int(input("Enter your set number(1-3): "))
+      print("1. mango smoothie\n2. blueberry slushie\n3. water\n4. strawberry fresh\n5. pretty in pink\n")
+      if x == 1:
+        order.append("supreme pizza")
+        order.append("pasta salad")
+      elif x == 2:
+        order.append("salty sailor pizza")
+        order.append("lasagna")
+      else:
+        order.append("classic meat pizza")
+        order.append("carbonara")
+      x = int(input("Enter your drinks number(1-5): "))
+      while x < 1 or x > 5:
+        print("Invalid choice. Please choose again.")
+        x = int(input("Enter your drinks number(1-5): "))
+      order.append(drinks(x))
+
+      print(f"\nYou have ordered {combos(x)} with {drinks(x)}! You get a blindbox containing one of these toys: kitty, bee, caterpiller, or bear.\n")
+      input("Open the blindbox?\nPress enter..\n\n")
+      import random
+      toy = random.randint(1,4)
+      if toy == 1:
+        print(f"You got the kitty!🐱")
+      elif toy == 2:
+        print(f"You got the bee!🐝")
+      elif toy == 3:
+        print(f"You got the caterpiller!🐛")
+      else:
+        print(f"You got the bear!🐻")
+      print("Thank you for your purchase. 🐈")
+    elif menu == 5:
+      review(order)
+    elif menu == 6:
+      print("Thank you for visiting Thiri's Kitchen. Come again! <3")
+      break
+    else:
+      print("Invalid choice. Please choose again.")
 print()
 welcome()
+
 

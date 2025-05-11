@@ -36,7 +36,6 @@ def drinks(x):
   else:
     return 'pretty in pink'
 
-
 def combos(x):
   if x == 1:
     return 'Supreme pizza, pasta salad'
@@ -51,7 +50,6 @@ def review(order):
     print(f" {i}")
   print("\nThank you for your purchase! 🐈‍⬛")
 
-  
 def welcome():
   order = []
   print("Welcome to Thiri's kitchen! Please choose a category from below! 🐈‍⬛")
@@ -136,5 +134,3 @@ def welcome():
       print("Invalid choice. Please choose again.")
 print()
 welcome()
-
-
